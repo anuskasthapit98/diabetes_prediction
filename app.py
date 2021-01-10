@@ -4,7 +4,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-model = pickle.load(open("Diabetes_Final.pkl", "rb"))
+model = pickle.load(open("Diabetes1.pkl", "rb"))
 
 
 @app.route('/')
