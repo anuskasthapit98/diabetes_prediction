@@ -4,7 +4,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-model = pickle.load(open("Diabete.pkl", "rb"))
+model = pickle.load(open("Diabetes_Final.pkl", "rb"))
 
 
 @app.route('/')
@@ -23,6 +23,8 @@ def predict():
  
     row_df = pd.DataFrame([pd.Series([text1,text2,text3,text4,text5])])
     print(row_df)
+       
+    
     prediction=model.predict_proba(row_df)
     output='{0:.{1}f}'.format(prediction[0][1], 2)
     output = str(float(output)*100)+'%'
